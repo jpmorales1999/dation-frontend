@@ -35,7 +35,7 @@ export default function Login() {
     let formOkey = true
 
     /* Validar campos */
-    if (formValue.email) {
+    if (!formValue.email) {
       errors.email = true
       formOkey = false
     }
