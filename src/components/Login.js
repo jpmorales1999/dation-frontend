@@ -6,9 +6,6 @@ import { toast } from 'react-toastify'
 import firebase from '../utils/Firebase'
 import 'firebase/compat/auth'
 
-/* Validations */
-import { validateEmail } from '../utils/Validations'
-
 export default function Login() {
   const history = useNavigate()
 
@@ -38,7 +35,7 @@ export default function Login() {
     let formOkey = true
 
     /* Validar campos */
-    if (!validateEmail(formValue.email)) {
+    if (formValue.email) {
       errors.email = true
       formOkey = false
     }

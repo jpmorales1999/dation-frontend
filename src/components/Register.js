@@ -6,9 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import firebase from '../utils/Firebase'
 import 'firebase/compat/auth'
 
-/* Validations */
-import { validateEmail } from '../utils/Validations'
-
 export default function Register() {
     const history = useNavigate()
 
@@ -29,7 +26,7 @@ export default function Register() {
         let formOkey = true
 
         /* Validar campos */
-        if (!validateEmail(formValue.email)) {
+        if (!formValue.email) {
             errors.email = true
             formOkey = false
         }   
